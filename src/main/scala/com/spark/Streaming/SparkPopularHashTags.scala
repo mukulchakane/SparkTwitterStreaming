@@ -1,9 +1,8 @@
 package com.spark.Streaming
 
-import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.SparkContext
+import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.streaming.twitter._
-import org.apache.spark.SparkConf
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /**
   * A Spark Streaming application that receives tweets on certain
@@ -21,8 +20,8 @@ import org.apache.spark.SparkConf
 
 object SparkPopularHashTags {
 
-  val conf = new SparkConf().setMaster("local[2]").setAppName("Spark Streaming - PopularHashTags")
-  val sc = new SparkContext(conf)
+  val sparkConf = new SparkConf().setMaster("local[2]").setAppName("Spark Streaming - PopularHashTags")
+  val sc = new SparkContext(sparkConf)
 
   def main(args: Array[String]) {
 
